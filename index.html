@@ -503,6 +503,30 @@
             padding: 40px 20px; 
             margin-top: 60px;
         }
+        .footer-info {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .creator-credit {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(245, 227, 227, 0.2);
+            font-size: 1em;
+        }
+        .creator-credit a {
+            color: #ffb8b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .creator-credit a:hover {
+            color: #ffe5e5;
+            text-decoration: underline;
+        }
+        .heart-icon {
+            color: #ff6b6b;
+            margin: 0 5px;
+        }
         
         /* Мобилен вариант */
         @media (max-width: 768px) { 
@@ -842,7 +866,13 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Обединено женско дружество – с. Рилци. Всички права запазени.</p>
+        <div class="footer-info">
+            <p>&copy; 2026 Обединено женско дружество – с. Рилци. Всички права запазени.</p>
+            <div class="creator-credit">
+                <i class="fas fa-code"></i> Сайтът е създаден от <a href="https://www.facebook.com/normal777m" target="_blank" rel="noopener noreferrer">Павел Димитров</a> 
+                <span class="heart-icon"><i class="fas fa-heart"></i></span> и предоставен безвъзмездно на Обединено женско дружество – с. Рилци
+            </div>
+        </div>
     </footer>
 
     <script>
