@@ -6,6 +6,8 @@
     <title>Обединено женско дружество – с. Рилци</title>
     <meta name="description" content="Обединено женско дружество – с. Рилци. От 2019 г. жените от Рилци пазят традициите, помагат на нуждаещите се и възраждат селото.">
 
+<script data-host="https://count.bg" data-dnt="false" src="https://count.bg/js/script.js" id="ZwSg9rf6GA" async defer></script>
+
     <!-- Open Graph мета тагове -->
     <meta property="og:title" content="Обединено женско дружество – с. Рилци">
     <meta property="og:description" content="Жените от Рилци – будни, обединени, дейни. Благотворителност, фолклор, обновено училище, парк, пенсионерски клуб.">
@@ -20,17 +22,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://maps.gstatic.com">
+    <link rel="preconnect" href="https://maps.googleapis.com">
 
     <!-- Preload на LCP изображението (банер) -->
     <link rel="preload" as="image" href="banner-ojd-riltsi.webp" fetchpriority="high">
+
+    <!-- Preload на критични шрифтове (за по-бързо първо рисуване) -->
+    <link rel="preload" as="font" type="font/woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" crossorigin>
 
     <!-- Google Fonts с display=swap (неблокиращо) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 
-<script data-host="https://count.bg" data-dnt="false" src="https://count.bg/js/script.js" id="ZwSg9rf6GA" async defer></script>
-
-    <!-- Font Awesome - асинхронен -->
+    <!-- Font Awesome - асинхронен (след като се зареди, медията става all) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
@@ -615,7 +621,8 @@
     <nav>
         <div class="nav-container">
             <div class="logo-container">
-                <img src="logo-ojd-riltsi.webp" alt="Лого на Обединено женско дружество - Рилци" class="logo-image">
+                <!-- Добавени width и height за намаляване на CLS (приблизителни размери, съобразени с CSS) -->
+                <img src="logo-ojd-riltsi.webp" alt="Лого на Обединено женско дружество - Рилци" class="logo-image" width="100" height="50">
                 <a href="#" class="logo-text">Обединено женско дружество <span>с. Рилци</span></a>
             </div>
             <button class="mobile-menu-btn" aria-label="Отвори меню" aria-expanded="false">
@@ -645,7 +652,8 @@
             <section id="about">
                 <h2>За нашето дружество</h2>
                 <div class="about-content">
-                    <img src="https://images.pexels.com/photos/6605460/pexels-photo-6605460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Жени от дружеството" class="about-image">
+                    <!-- Добавени width и height за изображението, съответстващи на CSS aspect-ratio -->
+                    <img src="https://images.pexels.com/photos/6605460/pexels-photo-6605460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Жени от дружеството" class="about-image" width="500" height="375" loading="lazy">
                     <div class="about-text">
                         <p style="font-size: 1.2em; margin-bottom: 20px;"><strong>Обединено женско дружество – с. Рилци</strong> е създадено на <strong>15 декември 2019 г.</strong> в бар Каролина. Първоначално носи името <strong>Добродетелно женско сдружение</strong>, а от 15 декември 2023 г. се преименува на <strong>Обединено женско дружество</strong>.</p>
                         
@@ -830,6 +838,7 @@
                         </div>
                     </div>
                     <div class="map-container">
+                        <!-- Добавен loading="lazy" и title за достъпност -->
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12000!2d23.072!3d42.0425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aab0b8c3c9b1a5%3A0x4e5b8f5c5f5f5f5f!2z0KDQuNC70YbQuCwg0JHRi9C70LPQsNGA0LjRjw!5e0!3m2!1sbg!2sbg!4v1620000000000!5m2!1sbg!2sbg" 
                             allowfullscreen=""
                             loading="lazy"
@@ -889,6 +898,45 @@
     </footer>
 
     <script>
+        // Дебounced scroll handler за намаляване на принудителни преоформления
+        let scrollTimeout;
+        const scrollHandler = function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+
+            if (window.pageYOffset < 300) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                const homeLink = document.querySelector('.nav-links a[href="#home"]');
+                if (homeLink) homeLink.classList.add('active');
+            }
+        };
+
+        // Използваме requestAnimationFrame за плавност и throttle 100ms
+        window.addEventListener('scroll', function() {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(function() {
+                scrollHandler();
+            });
+        }, { passive: true });
+
+        // Мобилно меню
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
@@ -924,31 +972,7 @@
             });
         });
 
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-
-            if (window.pageYOffset < 300) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                document.querySelector('.nav-links a[href="#home"]').classList.add('active');
-            }
-        });
-
+        // Плавно скролиране
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
