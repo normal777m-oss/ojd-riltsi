@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика за поверителност | Обединено женско дружество – с. Рилци</title>
+    <meta name="description" content="Политика за поверителност на Обединено женско дружество – с. Рилци. Научете как обработваме личните ви данни.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Шрифтове и икони (същите като в основния сайт) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Копирани стилове от основния сайт (само съществените) */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: #fefaf5; 
+            padding-top: 80px;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Навигация */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-image {
+            height: 50px;
+            width: auto;
+            border-radius: 10px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #c44569;
+            text-decoration: none;
+            line-height: 1.2;
+        }
+        .logo-text span {
+            color: #333;
+            font-size: 0.6em;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            display: block;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #c44569;
+            background: rgba(196, 69, 105, 0.1);
+        }
+        .nav-links a.active {
+            color: white;
+            background: linear-gradient(135deg, #c44569 0%, #e66767 100%);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .mobile-menu-btn:hover {
+            background-color: rgba(196, 69, 105, 0.1);
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Секция с политика */
+        .policy-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(196, 69, 105, 0.1);
+            margin: 30px 0;
+        }
+        .policy-section h1 {
+            color: #c44569;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .policy-section h1::after {
+            content: '✿';
+            display: block;
+            font-size: 1.4em;
+            color: #e66767;
+            line-height: 1;
+            margin: 10px auto 0;
+        }
+        .policy-section h2 {
+            color: #8b5a5a;
+            font-size: 1.8em;
+            margin: 30px 0 15px;
+        }
+        .policy-section h3 {
+            color: #c44569;
+            margin: 25px 0 10px;
+        }
+        .policy-section p, .policy-section ul {
+            margin-bottom: 15px;
+        }
+        .policy-section ul {
+            padding-left: 30px;
+        }
+        .policy-section a {
+            color: #c44569;
+        }
+
+        /* Бутон за връщане */
+        .back-home {
+            display: inline-block;
+            margin: 20px 0;
+            color: #c44569;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-home i {
+            margin-right: 8px;
+        }
+
+        footer { 
+            background: linear-gradient(145deg, #2c2c2c, #3a3a3a); 
+            color: #f5e3e3; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin-top: 60px;
+        }
+        .footer-info {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #ffb8b8;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            body { padding-top: 70px; }
+            .policy-section { padding: 30px 20px; }
+            .policy-section h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="logo-ojd-riltsi.webp" alt="Лого" class="logo-image" width="100" height="50">
+                <a href="index.html" class="logo-text">Обединено женско дружество <span>с. Рилци</span></a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Отвори меню" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Начало</a>
+                <a href="index.html#about">За нас</a>
+                <a href="index.html#activities">Дейности</a>
+                <a href="index.html#projects">Проекти</a>
+                <a href="index.html#contact">Контакти</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Обратно към началната страница</a>
+        <div class="policy-section">
+            <h1>Политика за поверителност</h1>
+            <p>Настоящата политика описва как Обединено женско дружество – с. Рилци („ние“, „нас“) събира и обработва лични данни на потребителите на нашия уебсайт.</p>
+            
+            <h2>1. Какви данни събираме?</h2>
+            <p>При посещение на сайта не събираме лични данни автоматично. Вие можете да се свържете с нас чрез посочения телефон, като предоставите информация доброволно (име, телефонен номер, имейл – ако решите да ги споделите). Сайтът използва единствено бисквитки, необходими за функционирането му (напр. запазване на избора за бисквитки).</p>
+            
+            <h2>2. Бисквитки на трети страни</h2>
+            <p>За показване на картата използваме услугата Google Maps, която може да инсталира бисквитки на вашето устройство. Тези бисквитки се активират само след изричното ви съгласие. Можете да научите повече в нашата <a href="cookie-policy.html">Политика за бисквитки</a>.</p>
+            
+            <h2>3. Сигурност</h2>
+            <p>Вашите данни са защитени и не се споделят с трети лица без ваше съгласие, освен ако не се налага по законов път.</p>
+            
+            <h2>4. Вашите права</h2>
+            <p>Имате право на достъп, коригиране или изтриване на личните си данни. За целта се свържете с нас на телефон <strong>0885 417 302</strong> (Гергана Петкова).</p>
+            
+            <h2>5. Промени в политиката</h2>
+            <p>При евентуални промени ще обновим тази страница. Последна актуализация: март 2026 г.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Политика за поверителност</a>
+                <a href="cookie-policy.html">Политика за бисквитки</a>
+            </div>
+            <p>&copy; 2026 Обединено женско дружество – с. Рилци</p>
+        </div>
+    </footer>
+
+    <script>
+        // Мобилно меню (опростено копие)
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', !expanded);
+                navLinks.classList.toggle('active');
+                const icon = menuBtn.querySelector('i');
+                if (!expanded) {
+                    menuBtn.setAttribute('aria-label', 'Затвори меню');
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    menuBtn.setAttribute('aria-label', 'Отвори меню');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+            });
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    menuBtn.setAttribute('aria-label', 'Отвори меню');
+                    menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
