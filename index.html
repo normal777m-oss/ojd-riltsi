@@ -16,10 +16,22 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- Шрифтове и икони -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <!-- Предварителни връзки за ускоряване -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload на LCP изображението (банер) -->
+    <link rel="preload" as="image" href="banner-ojd-riltsi.webp" fetchpriority="high">
+
+    <!-- Google Fonts с display=swap (неблокиращо) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
+
+    <!-- Font Awesome - асинхронен -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
@@ -70,7 +82,6 @@
             color: #c44569;
             text-decoration: none;
             line-height: 1.2;
-            /* увеличена цел за докосване */
             padding: 8px 0;
             display: inline-block;
         }
@@ -109,7 +120,6 @@
             font-size: 1.5em;
             color: #333;
             cursor: pointer;
-            /* увеличена цел за докосване */
             min-width: 44px;
             min-height: 44px;
             padding: 10px;
@@ -136,7 +146,6 @@
             align-items: center;
             margin-top: -80px; 
         }
-        /* Тъмен овърлей за по-добра четливост на текста */
         header::before {
             content: '';
             position: absolute;
@@ -198,7 +207,6 @@
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
-        /* Основни секции - само за дружеството */
         section { 
             background: rgba(255,255,255,0.9); 
             backdrop-filter: blur(3px);
@@ -226,7 +234,6 @@
             margin: 10px auto 0;
         }
         
-        /* За дружеството */
         .about-content {
             display: flex;
             align-items: center;
@@ -257,7 +264,6 @@
             border-left: 5px solid #e66767;
         }
         
-        /* Ключови хора в дружеството */
         .people-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -282,11 +288,10 @@
         }
         .person-card .role {
             font-weight: 600;
-            color: #aa3e5e; /* по-тъмен нюанс за по-добър контраст */
+            color: #aa3e5e;
             margin-bottom: 15px;
         }
         
-        /* Дейности на дружеството */
         .activities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -316,7 +321,6 @@
             color: #c44569;
         }
         
-        /* Проекти на дружеството */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -343,15 +347,14 @@
         .project-tag {
             display: inline-block;
             background: #fceaea;
-            color: #972b4f; /* По-тъмен нюанс за подобрен контраст (преди беше #c44569) */
+            color: #972b4f;
             padding: 3px 15px;
             border-radius: 20px;
             font-size: 0.9em;
             margin-top: 10px;
-            font-weight: 500; /* леко удебелен за по-добра четливост */
+            font-weight: 500;
         }
         
-        /* Парк (проект на дружеството) */
         .park-highlight {
             background: linear-gradient(145deg, #e8f5e8, #f0f9f0);
             padding: 40px;
@@ -384,7 +387,6 @@
             color: #2e7d32;
         }
         
-        /* Партньори на дружеството */
         .partners {
             display: flex;
             flex-wrap: wrap;
@@ -404,7 +406,6 @@
             color: #c44569;
         }
         
-        /* Секция за селото (в края) */
         .village-section {
             background: #f5f0f0;
             padding: 50px 40px;
@@ -440,7 +441,6 @@
             margin-bottom: 15px;
         }
         
-        /* Контакти - без имейл и информация за сбирки */
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
@@ -505,7 +505,6 @@
             color: #c44569;
             font-size: 2.5em;
             transition: transform 0.3s;
-            /* цел за докосване */
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -551,7 +550,6 @@
             margin: 0 5px;
         }
         
-        /* Мобилен вариант */
         @media (max-width: 768px) { 
             .nav-links {
                 display: none;
@@ -600,7 +598,6 @@
             }
         }
         
-        /* Много малки екрани */
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.8em;
@@ -613,7 +610,6 @@
     </style>
 </head>
 <body>
-    <!-- Навигация с лого -->
     <nav>
         <div class="nav-container">
             <div class="logo-container">
@@ -633,9 +629,7 @@
         </div>
     </nav>
 
-    <!-- Главно съдържание -->
     <main>
-        <!-- Хедър с банер 3360x1280 -->
         <header id="home">
             <h1>Обединено женско дружество – с. Рилци</h1>
             <p class="subtitle">Будни. Обединени. Дейни.</p>
@@ -646,7 +640,6 @@
         </header>
 
         <div class="container">
-            <!-- За дружеството -->
             <section id="about">
                 <h2>За нашето дружество</h2>
                 <div class="about-content">
@@ -663,7 +656,6 @@
                     </div>
                 </div>
 
-                <!-- Ключови хора в дружеството -->
                 <div class="people-grid">
                     <div class="person-card">
                         <i class="fas fa-user-circle"></i>
@@ -686,7 +678,6 @@
                 </div>
             </section>
 
-            <!-- Дейности на дружеството -->
             <section id="activities">
                 <h2>Нашите дейности</h2>
                 <div class="activities-grid">
@@ -723,7 +714,6 @@
                 </div>
             </section>
 
-            <!-- Проекти на дружеството -->
             <section id="projects">
                 <h2>Какво постигнахме заедно</h2>
                 
@@ -772,7 +762,6 @@
                     </div>
                 </div>
 
-                <!-- Парк (акцент) -->
                 <div class="park-highlight">
                     <h3 style="color: #2e7d32; text-align: center;">🌳 Парк с доброволен труд</h3>
                     <div class="park-stats">
@@ -796,7 +785,6 @@
                 </div>
             </section>
 
-            <!-- Партньори -->
             <section>
                 <h2>Нашите партньори</h2>
                 <div class="partners">
@@ -819,7 +807,6 @@
                 </div>
             </section>
 
-            <!-- Контакти - без имейл и информация за сбирки -->
             <section id="contact">
                 <h2>Свържете се с нас</h2>
                 <div class="contact-grid">
@@ -841,7 +828,6 @@
                         </div>
                     </div>
                     <div class="map-container">
-                        <!-- Google Maps карта с точните координати на с. Рилци -->
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12000!2d23.072!3d42.0425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aab0b8c3c9b1a5%3A0x4e5b8f5c5f5f5f5f!2z0KDQuNC70YbQuCwg0JHRi9C70LPQsNGA0LjRjw!5e0!3m2!1sbg!2sbg!4v1620000000000!5m2!1sbg!2sbg" 
                             allowfullscreen=""
                             loading="lazy"
@@ -851,7 +837,6 @@
                 </div>
             </section>
 
-            <!-- Секция за селото (в края) -->
             <div class="village-section">
                 <h2>За село Рилци</h2>
                 <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
@@ -902,7 +887,6 @@
     </footer>
 
     <script>
-        // Мобилно меню - подобрена достъпност
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
 
@@ -912,7 +896,6 @@
                 this.setAttribute('aria-expanded', !isExpanded);
                 navLinks.classList.toggle('active');
                 
-                // Промяна на иконата и етикета според състоянието
                 const icon = this.querySelector('i');
                 if (!isExpanded) {
                     this.setAttribute('aria-label', 'Затвори меню');
@@ -939,7 +922,6 @@
             });
         });
 
-        // Активен линк при скрол
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
@@ -965,7 +947,6 @@
             }
         });
 
-        // Плавно скролиране
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
